@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/d663ba54c1.js" crossorigin="anonymous"></script>
+        <title>Instagram Photo Feed con Bootstrap</title>
+    </head>
+    <body>
+<!-- menú principal --> 
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <i class="fa-brands fa-instagram"></i>
+                Instagram
+              </a>
+              <!-- menú superior derecho -->
+              <nav class="navbar navbar-light bg-light">
+               <form class="container-fluid justify-content-end">
+                  <!-- create a new post -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Create a new post</button>
+                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                   <div class="modal-dialog">
+                     <div class="modal-content">
+                       <div class="modal-header">
+                         <h5 class="modal-title" id="exampleModalLabel">Create a new post</h5>
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                       </div>
+                       <div class="modal-body">
+                         <form>
+                           <div class="mb-3">
+                             <label for="message-text" class="col-form-label">Caption:</label>
+                             <textarea class="form-control text-secondary" id="message-text">Add the caption of your post here</textarea>
+                           </div>
+                           <i class="fa-solid fa-camera" style="border: 2px solid rgb(223, 220, 220) ; padding: 5px; padding-left: 7px; padding-right: 7px;"></i>
+                           <i class="fa-solid fa-location-dot" style="border: 2px solid rgb(223, 220, 220) ; padding: 5px; padding-left: 7px; padding-right: 7px;"></i>                    
+                       </div>
+                       <div class="modal-footer">
+                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                         <button type="button" class="btn btn-success">Publish</button>
+                       </div>
+                     </div>
+                   </div>
+                 </div> 
+                    <!-- fin create a new post -->                     
+                    <!-- menú desplegable --> 
+                 <div class="btn-group">
+                     <button type="button" class="btn btn-secondary"><i class="fa-solid fa-gear"></i></button>
+                     <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                     </button>
+                       <ul class="dropdown-menu dropdown-menu-end">
+                         <li><a class="dropdown-item" href="#">Profile</a></li>
+                         <li><a class="dropdown-item" href="#">Accesibility</a></li>
+                         <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+                         <li><hr class="dropdown-divider"></li>
+                         <textarea class="dropdown-item text-danger" id="message-text">Log out</textarea>
+                       </ul>
+                       <!-- fin menú desplegable --> 
+                   </div>
+                 </form>
+               </nav>
+           </div>
+        </nav>
+<!-- fin Menú principal -->
+<!-- iconos -->  
+    <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fas fa-th"></i></button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fas fa-square"></i></button>
+      </li>
+    </ul>
+    <!-- grilla de fotos--> 
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0"><div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4 d-flex" style="border-bottom: 20px solid white;">
+            <img src="https://cdn.pixabay.com/photo/2013/02/21/19/06/drink-84533_1280.jpg" class="img-fluid" alt="imagen 1">
+          </div>
+          <div class="col-md-4 d-flex" style="border-bottom: 20px solid white;">
+            <img src="https://cdn.pixabay.com/photo/2016/03/08/20/03/flag-1244649_1280.jpg" class="img-fluid" alt="imagen 2">
+          </div>
+          <div class="col-md-4 d-flex" style="border-bottom: 20px solid white;">
+            <img src="https://cdn.pixabay.com/photo/2016/10/26/19/00/domain-names-1772242_1280.jpg" class="img-fluid" alt="imagen 3">
+          </div>
+          <div class="col-md-4 d-flex" style="border-bottom: 20px solid white;">
+            <img src="https://cdn.pixabay.com/photo/2018/04/26/12/14/travel-3351825_1280.jpg" class="img-fluid" alt="imagen 4">
+          </div>
+          <div class="col-md-4 d-flex" style="border-bottom: 20px solid white;">
+            <img src="https://cdn.pixabay.com/photo/2021/10/05/14/32/ocean-6682870_1280.jpg" class="img-fluid" alt="imagen 5">
+          </div>
+          <div class="col-md-4 d-flex" style="border-bottom: 20px solid white;">
+            <img src="https://cdn.pixabay.com/photo/2016/11/18/18/39/beach-1836335_1280.jpg" class="img-fluid" alt="imagen 6">
+          </div>
+          <div class="col-md-4 d-flex" style="border-bottom: 20px solid white;">
+            <img src="https://cdn.pixabay.com/photo/2018/06/03/14/17/sea-3450584_1280.jpg" class="img-fluid" alt="imagen 7">
+          </div>
+          <div class="col-md-4 d-flex" style="border-bottom: 20px solid white;">
+            <img src="https://cdn.pixabay.com/photo/2015/06/01/05/58/shells-792912_1280.jpg" class="img-fluid" alt="imagen 8">
+          </div>
+          <div class="col-md-4 d-flex" style="border-bottom: 20px solid white;">
+            <img src="https://cdn.pixabay.com/photo/2018/08/20/15/31/palm-trees-3619180_1280.jpg" class="img-fluid" alt="imagen 9">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- fin grilla de fotos--> 
+    <!-- inicio scrool de fotos--> 
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="card mx-auto" style="width: 28rem;">
+                <h6 class="p-2 flex-grow-1 bd-highlight">Drink on the beach</h6>
+                <p class="p-2 bd-highlight">01/04</p>
+              </div>
+              <img src="https://cdn.pixabay.com/photo/2013/02/21/19/06/drink-84533_1280.jpg" class="card-img-top" alt="imagen 1 post">
+              <div class="card-body">
+                <h6 class="card-title2">204 Likes</h6>
+                <p class="card-text">This is an example of a very good photo that you can post on instagram.</p>
+              </div>
+            </div>
+          </div>
+        </div>    
+    </div>    
+  </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    </body>
+</html>
